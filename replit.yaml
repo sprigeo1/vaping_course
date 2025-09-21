@@ -1,6 +1,3 @@
 run: npm run dev
 language: nodejs
 entrypoint: server.js
-hidden:
-  - node_modules
-  - .env

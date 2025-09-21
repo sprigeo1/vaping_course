@@ -1,3 +1,1 @@
-{ pkgs }: {
-  deps = [ pkgs.nodejs_20 pkgs.git pkgs.python3 ];
-}
+{ pkgs }: { deps = [ pkgs.nodejs-18_x pkgs.git ]; }
