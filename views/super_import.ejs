@@ -1,0 +1,9 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Import Course from IMSCC</h2>
+  <form method="post" action="/superadmin/courses/import" enctype="multipart/form-data">
+    <div class="row"><label>IMSCC file</label><input type="file" name="imscc" accept=".imscc,.zip" required></div>
+    <button class="button" type="submit">Import</button>
+  </form>
+</section>
+*/}).toString().slice(14,-3) }) %>

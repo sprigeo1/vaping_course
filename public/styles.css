@@ -1,0 +1,11 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:#f7f7fb; color:#222; }
+.topbar { background:#222; color:#fff; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; }
+.topbar a { color:#fff; margin-left:12px; text-decoration:none; }
+.container { max-width: 960px; margin: 20px auto; padding: 0 16px; }
+.card { background:#fff; border-radius:12px; padding:16px; margin:16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.table { width:100%; border-collapse: collapse; }
+.table th, .table td { padding:8px; border-bottom:1px solid #eee; text-align:left; }
+.button { background:#444; color:#fff; padding:8px 12px; border-radius:6px; text-decoration:none; margin-right:6px; display:inline-block; }
+.row { margin:8px 0; }
+.row input, .row select, .row textarea { width:100%; padding:8px; }
+.muted { color:#666; }

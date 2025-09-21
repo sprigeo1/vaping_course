@@ -1,0 +1,15 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2><%= assignment.title %></h2>
+  <pre class="muted"><%= assignment.prompt %></pre>
+  <form method="post" action="/assignment/<%= assignment.id %>/submit" enctype="multipart/form-data">
+    <div class="row"><label>Response</label><textarea name="text" rows="5"></textarea></div>
+    <div class="row"><label>File</label><input type="file" name="file"></div>
+    <button class="button" type="submit">Submit</button>
+  </form>
+  <h3>Your Submissions</h3>
+  <ul>
+    <% mySubs.forEach(s => { %><li><%= s.created_at %> — <%= (s.text || '').slice(0,120) %> <span class="muted"><%= s.file_path || '' %></span></li><% }) %>
+  </ul>
+</section>
+*/}).toString().slice(14,-3) }) %>

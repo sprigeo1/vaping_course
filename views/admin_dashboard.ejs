@@ -1,0 +1,45 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Admin Dashboard</h2>
+  <p class="muted">You manage the schools assigned to you.</p>
+  <h3>Your Schools</h3>
+  <ul>
+    <% schools.forEach(s => { %><li><strong><%= s.name %></strong> — <%= s.district_name %></li><% }) %>
+  </ul>
+</section>
+<section class="card">
+  <h3>Available Courses</h3>
+  <ul>
+    <% courses.forEach(c => { %><li><%= c.title %></li><% }) %>
+  </ul>
+  <a class="button" href="/admin/courses">Enroll Learners in Courses</a>
+</section>
+<section class="card">
+  <h3>Recent Submissions</h3>
+  <table class="table">
+    <thead><tr><th>When</th><th>Learner</th><th>Assignment</th><th>Text</th><th>File</th></tr></thead>
+    <tbody>
+      <% submissions.forEach(s => { %>
+        <tr>
+          <td><%= s.created_at %></td>
+          <td><%= s.learner_name %></td>
+          <td><%= s.assignment_title %></td>
+          <td><%= (s.text || '').slice(0,160) %></td>
+          <td><%= s.file_path || '' %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+<section class="card">
+  <h2>Exports</h2>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+    <a href="/admin/export" style="background-color:#4CAF50; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Download Learners CSV</a>
+    <a href="/admin/submissions/export" style="background-color:#2196F3; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Download Submissions CSV</a>
+  </div>
+</section>
+<nav class="card">
+  <a href="/admin/learners" class="button">Manage Learners</a>
+  <a href="/admin/admins" class="button">Manage Admins</a>
+</nav>
+*/}).toString().slice(14,-3) }) %>

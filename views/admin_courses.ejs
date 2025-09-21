@@ -1,0 +1,18 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Enroll Learners in Courses</h2>
+  <form method="post" action="/admin/enroll">
+    <div class="row"><label>Learner</label>
+      <select name="learner_id">
+        <% learners.forEach(l => { %><option value="<%= l.id %>"><%= l.last_name %>, <%= l.first_name %></option><% }) %>
+      </select>
+    </div>
+    <div class="row"><label>Course</label>
+      <select name="course_id">
+        <% courses.forEach(c => { %><option value="<%= c.id %>"><%= c.title %></option><% }) %>
+      </select>
+    </div>
+    <button class="button" type="submit">Enroll</button>
+  </form>
+</section>
+*/}).toString().slice(14,-3) }) %>

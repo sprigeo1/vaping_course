@@ -1,0 +1,9 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Course Assignments</h2>
+  <% if (!assignments.length) { %><p>No assignments in this course.</p><% } %>
+  <ul>
+    <% assignments.forEach(a => { %><li><a href="/assignment/<%= a.id %>"><%= a.title %></a></li><% }) %>
+  </ul>
+</section>
+*/}).toString().slice(14,-3) }) %>

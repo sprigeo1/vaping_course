@@ -1,0 +1,78 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Super Admin</h2>
+  <h3>Create District</h3>
+  <form method="post" action="/superadmin/districts/create">
+    <div class="row"><label>Name</label><input name="name" required></div>
+    <div class="row"><label>City</label><input name="city"></div>
+    <div class="row"><label>State</label><input name="state"></div>
+    <button class="button" type="submit">Create District</button>
+  </form>
+</section>
+<section class="card">
+  <h3>Create School</h3>
+  <form method="post" action="/superadmin/schools/create">
+    <div class="row"><label>Name</label><input name="name" required></div>
+    <div class="row"><label>District</label>
+      <select name="district_id">
+        <% districts.forEach(d => { %><option value="<%= d.id %>"><%= d.name %> (<%= d.state %>)</option><% }) %>
+      </select>
+    </div>
+    <button class="button" type="submit">Create School</button>
+  </form>
+</section>
+<section class="card">
+  <h3>Create Course</h3>
+  <form method="post" action="/superadmin/courses/create">
+    <div class="row"><label>Title</label><input name="title" required></div>
+    <div class="row"><label>Description</label><input name="description"></div>
+    <button class="button" type="submit">Create Course</button>
+  </form>
+</section>
+<section class="card">
+  <h3>Courses</h3>
+  <ul>
+    <% courses.forEach(c => { %>
+      <li>
+        <strong>#<%= c.id %> <%= c.title %></strong>
+        <form method="post" action="/superadmin/courses/assign-all" style="display:inline;margin-left:10px;">
+          <input type="hidden" name="course_id" value="<%= c.id %>"><button class="button" type="submit">Assign to ALL Schools</button>
+        </form>
+        <form method="post" action="/superadmin/courses/assign-all-districts" style="display:inline;margin-left:10px;">
+          <input type="hidden" name="course_id" value="<%= c.id %>"><button class="button" type="submit">Assign to ALL Districts</button>
+        </form>
+        <form method="post" action="/superadmin/courses/assign-districts" style="display:inline;margin-left:10px;">
+          <input type="hidden" name="course_id" value="<%= c.id %>">
+          <input type="text" name="district_ids" placeholder="District IDs comma-separated">
+          <button class="button" type="submit">Assign to Districts</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+<section class="card">
+  <h2>Exports</h2>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+    <a href="/superadmin/export" style="background-color:#4CAF50; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Download All Learners CSV</a>
+    <a href="/superadmin/submissions/export" style="background-color:#2196F3; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Download All Submissions CSV</a>
+    <a href="/superadmin/courses/import" style="background-color:#673AB7; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Import Course (.imscc)</a>
+    <a href="/superadmin/load-sample-data" style="background-color:#FF9800; color:white; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:bold;">Load Sample Data</a>
+  </div>
+</section>
+<section class="card">
+  <h3>All Admins</h3>
+  <table class="table">
+    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr></thead>
+    <tbody>
+      <% admins.forEach(a => { %>
+        <tr>
+          <td><%= a.id %></td><td><%= a.name %></td><td><%= a.email %></td><td><%= a.role %></td>
+          <td>
+            <form method="post" action="/superadmin/admins/delete" style="display:inline"><input type="hidden" name="admin_id" value="<%= a.id %>"><button class="button" type="submit">Delete</button></form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+*/}).toString().slice(14,-3) }) %>

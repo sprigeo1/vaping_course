@@ -1,0 +1,12 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Learner Login</h2>
+  <% if (error) { %><p class="muted"><%= error %></p><% } %>
+  <form method="post" action="/login/learner">
+    <div class="row"><label>First name</label><input name="first_name" required></div>
+    <div class="row"><label>Last name</label><input name="last_name" required></div>
+    <div class="row"><label>4-char code</label><input name="code" maxlength="4" minlength="4" required></div>
+    <button class="button" type="submit">Login</button>
+  </form>
+</section>
+*/}).toString().slice(14,-3) }) %>

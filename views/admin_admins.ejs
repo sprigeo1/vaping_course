@@ -1,0 +1,12 @@
+<%- include('layout', { body: (function(){/*
+<section class="card">
+  <h2>Admins</h2>
+  <form method="post" action="/admin/admins/create">
+    <div class="row"><label>Name</label><input name="name" required></div>
+    <div class="row"><label>Email</label><input name="email" type="email" required></div>
+    <div class="row"><label>Password</label><input name="password" type="password" required></div>
+    <div class="row"><label>School IDs (comma)</label><input name="school_ids"></div>
+    <button class="button" type="submit">Create Admin</button>
+  </form>
+</section>
+*/}).toString().slice(14,-3) }) %>

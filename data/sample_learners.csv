@@ -1,0 +1,4 @@
+first_name,last_name,code,school_ids,course_ids
+Alice,Anderson,AB12,1,1
+Bob,Brown,CD34,1;2,1;2
+Charlie,Clark,EF56,2,2
